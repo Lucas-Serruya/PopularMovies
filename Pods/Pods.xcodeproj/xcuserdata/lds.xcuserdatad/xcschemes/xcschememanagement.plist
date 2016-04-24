@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-PopularMovies.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,12 +32,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B27B772A0BDB2CB16DD88486B8DBA0D3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E119953F8940960B05545301F82A8E4C</key>
+		<key>FD5E9D00165DAFA6854DF5E06659CA91</key>
 		<dict>
 			<key>primary</key>
 			<true/>

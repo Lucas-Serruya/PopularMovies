@@ -9,6 +9,8 @@ target 'PopularMovies' do
     use_frameworks!
 
     pod 'Alamofire', '~> 3.3'
+    pod 'SDWebImage', '~>3.7'
+
 
 end
 

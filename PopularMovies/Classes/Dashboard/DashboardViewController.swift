@@ -61,7 +61,8 @@ class DashboardViewController: UIViewController {
 }
 extension DashboardViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        //must implement
+        let portalController = MoviePortalViewController()
+        self.navigationController?.presentViewController(portalController, animated: true, completion:nil)
     }
 }
 

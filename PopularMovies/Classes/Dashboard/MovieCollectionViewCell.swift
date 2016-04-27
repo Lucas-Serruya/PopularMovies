@@ -7,10 +7,23 @@
 //
 
 import UIKit
+import SDWebImage
 
 class DashboardCollectionViewCell: UICollectionViewCell {
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        backgroundColor = UIColor.redColor()
+    @IBOutlet weak var posterImage: UIImageView!
+    @IBOutlet weak var title: UILabel!
+    
+    let posterImageRequiredResolution = "w342/"
+    
+    var movie: Movie? {
+        didSet {
+            if let moviePosterPath = movie?.moviePosterThumbnailPath {
+                posterImage.sd_setImageWithURL(NSURL(string: DataSource.apiImagesBasePath + posterImageRequiredResolution + moviePosterPath))
+            }
+            if let title = movie?.title {
+                self.title.text = title
+            }
+        }
     }
+    
 }

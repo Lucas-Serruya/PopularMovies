@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -54,21 +55,51 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adf-YI-7Ce">
-                                                    <rect key="frame" x="0.0" y="222" width="153" height="50"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="0.0" y="228" width="153" height="43.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="IEr-LC-aR0">
+                                                            <rect key="frame" x="5" y="22" width="143" height="0.0"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.20392156862745098" green="0.20392156862745098" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="IEr-LC-aR0" secondAttribute="trailing" constant="5" id="7ii-rL-8yK"/>
                                                         <constraint firstAttribute="height" constant="50" id="7lr-5b-UX4"/>
+                                                        <constraint firstItem="IEr-LC-aR0" firstAttribute="leading" secondItem="adf-YI-7Ce" secondAttribute="leading" constant="5" id="J4I-EA-lRQ"/>
+                                                        <constraint firstItem="IEr-LC-aR0" firstAttribute="centerY" secondItem="adf-YI-7Ce" secondAttribute="centerY" id="xJZ-yA-TUG"/>
                                                     </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="7lr-5b-UX4"/>
+                                                        </mask>
+                                                    </variation>
                                                 </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cvk-8i-4A8">
+                                                    <rect key="frame" x="0.0" y="0.0" width="153" height="228.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="cvk-8i-4A8" secondAttribute="height" multiplier="0.67:1" id="cPO-7b-Hcx"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="adf-YI-7Ce" secondAttribute="trailing" id="91E-zH-gGi"/>
+                                            <constraint firstItem="cvk-8i-4A8" firstAttribute="leading" secondItem="hvg-v0-R9i" secondAttribute="leading" id="Ke6-a5-Lhn"/>
                                             <constraint firstAttribute="bottom" secondItem="adf-YI-7Ce" secondAttribute="bottom" id="et4-DT-KHP"/>
+                                            <constraint firstItem="adf-YI-7Ce" firstAttribute="top" secondItem="cvk-8i-4A8" secondAttribute="bottom" id="kvr-uP-mjb"/>
                                             <constraint firstItem="adf-YI-7Ce" firstAttribute="leading" secondItem="hvg-v0-R9i" secondAttribute="leading" id="obj-Cz-cb3"/>
+                                            <constraint firstAttribute="trailing" secondItem="cvk-8i-4A8" secondAttribute="trailing" id="t4r-u3-2x5"/>
+                                            <constraint firstItem="cvk-8i-4A8" firstAttribute="top" secondItem="hvg-v0-R9i" secondAttribute="top" id="xoz-H7-Fem"/>
                                         </constraints>
                                         <size key="customSize" width="153" height="272"/>
+                                        <connections>
+                                            <outlet property="posterImage" destination="cvk-8i-4A8" id="mfg-wQ-Bbd"/>
+                                            <outlet property="title" destination="IEr-LC-aR0" id="T1p-gM-n1k"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

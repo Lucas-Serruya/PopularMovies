@@ -14,6 +14,7 @@ class DataSource {
     
     let apiKey = "ce26a4b91c4a8d18b3eb75c97dbf058a"
     let apiBaseUrl = "https://api.themoviedb.org/3/movie/"
+    static let apiImagesBasePath: String = "https://image.tmdb.org/t/p/"
     let popularMoviesEndpoint = "popular"
     
     //todo: make generic get
@@ -25,7 +26,7 @@ class DataSource {
                     for movie in responseArray {
                         let movie = Movie(fromDictionary: movie)
                         if (movie.id) != nil {
-                            moviesArray.append(Movie(fromDictionary: movie))
+                            moviesArray.append(movie)
                         }
                     }
                     completionHandler(moviesArray)

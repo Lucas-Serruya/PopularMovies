@@ -14,10 +14,17 @@ class DashboardViewController: UIViewController {
     var flowLayout = UICollectionViewFlowLayout()
     let movieCellAspectRatio: CGFloat = 1.7777777778 //9:16 aspect ratio
     let movieCellIdentifier = "MovieCollectionItemIdentifier"
+    var movies: [Movie] = Array()
+    var dataSource = DashboardDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMoviesCollectionView()
+        dataSource.needMoreMovies { (movies) in
+            self.movies = movies
+            self.moviesCollectionView.reloadData()
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,7 +67,7 @@ extension DashboardViewController: UICollectionViewDelegate {
 
 extension DashboardViewController: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return movies.count
         //must implement
     }
     
@@ -75,7 +82,7 @@ extension DashboardViewController: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(movieCellIdentifier, forIndexPath: indexPath)
         if let cellAux = cell as? DashboardCollectionViewCell {
-//            cellAux.composition = Store<Composition>().objects[indexPath.row]
+            cellAux.movie = movies[indexPath.row]
         }
         return cell
     }

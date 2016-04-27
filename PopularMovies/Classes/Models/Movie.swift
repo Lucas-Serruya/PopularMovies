@@ -9,14 +9,13 @@
 import UIKit
 
 class Movie {
-    
-    var id: Int! //id
-    var title: String? //original_title
-    var moviePosterThumbnailPath: String? //var poster_path
-    var trailerThumbnailPath: String? // backdrop_path
-    var overView: String? //overview
-    var rating: Float? //vote_average
-    var releaseDate: String? //release_date
+    var id: Int!
+    var title: String?
+    var moviePosterThumbnailPath: String?
+    var trailerThumbnailPath: String?
+    var overView: String?
+    var rating: Float?
+    var releaseDate: String?
     
     init(fromDictionary dictionary: AnyObject) {
         guard let id = dictionary["id"] as? Int else {

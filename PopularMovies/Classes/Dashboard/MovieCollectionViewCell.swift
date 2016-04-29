@@ -15,13 +15,13 @@ class DashboardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var detailContainer: UIView!
     
-    
-    let posterImageRequiredResolution = "w342/"
+    let posterImageRequiredResolutionForIphone = "w342/"
+    let posterImageRequiredResolutionForIpad = "w500/"
     
     var movie: Movie? {
         didSet {
             if let moviePosterPath = movie?.posterThumbnailPath {
-                let imageUrl = DataSource.apiImagesBasePath + posterImageRequiredResolution + moviePosterPath
+                let imageUrl = DataSource.apiImagesBasePath + value(iPad: posterImageRequiredResolutionForIpad, iPhone: posterImageRequiredResolutionForIphone) + moviePosterPath
                 posterImage.sd_setImageWithURL(NSURL(string:imageUrl), completed: { (image, error, cacheType, url) in
                     if error == nil {
                         self.detailContainer.backgroundColor = AverageColorFromImage(image)

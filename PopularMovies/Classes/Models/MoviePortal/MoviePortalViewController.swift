@@ -21,21 +21,25 @@ class MoviePortalViewController: UIViewController {
     
     var movie: Movie!
     
-    let thumbnailQuality = "w780/"
+    let thumbnailQualityForIphone = "w780/"
+    let thumbnailQualityForIpad = "w1280/"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         title = "Movie Detail"
+        
         posterThumbnail.image = movie?.posterThumbnail
         if let title = movie?.title, let shortTitle = title.componentsSeparatedByString(":").first {
             titleLabel.text = shortTitle
         }
-        dateLabel.text = convertDateFormater(movie?.releaseDate)
+        dateLabel.text = movie?.releaseDate?.returnStringDateWithFormat(currentFormat: "yyyy-MM-dd", dateRequiredFormat: "MMMM yyyy")
         if let rating = movie.rating {
             ratingLabel.text = "Average rating: " + String(format:"%.02f", rating)
         }
         overViewLabel.text = movie?.overView
-        setPlayerLayer()
+        loadMovieTrailer()
+        
         if let posterPath = movie?.posterThumbnailPath {
             NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MoviePortalViewController.didSetThumbnailPoster), name: NotificationKey.didSetThumbnailPoster + posterPath, object: nil)
         }
@@ -46,43 +50,16 @@ class MoviePortalViewController: UIViewController {
             NSNotificationCenter.defaultCenter().removeObserver(NotificationKey.didSetThumbnailPoster + posterPath)
         }
     }
-    override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        
-    }
     
     func didSetThumbnailPoster() {
         posterThumbnail.image = movie?.posterThumbnail
     }
     
     //set trailer logic here
-    func setPlayerLayer() {
+    func loadMovieTrailer() {
         if let movieTrailerThumbnailPath = movie?.trailerThumbnailPath {
-            let imageUrl = DataSource.apiImagesBasePath + thumbnailQuality + movieTrailerThumbnailPath
-            playerThumbnailImageView.sd_setImageWithURL(NSURL(string:imageUrl), completed: { (image, error, cacheType, url) in
-                if error == nil {
-                }
-            })
+            let imageUrl = DataSource.apiImagesBasePath + value(iPad: thumbnailQualityForIpad, iPhone: thumbnailQualityForIphone) + movieTrailerThumbnailPath
+            playerThumbnailImageView.sd_setImageWithURL(NSURL(string:imageUrl))
         }
-    }
-    
-    func convertDateFormater(date: String?) -> String? {
-        guard let date = date else {
-            return ""
-        }
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        dateFormatter.timeZone = NSTimeZone(name: "UTC")
-        
-        guard let dateData = dateFormatter.dateFromString(date) else {
-            assert(false, "no date from string")
-            return ""
-        }
-        
-        dateFormatter.dateFormat = "MMMM yyyy"
-        dateFormatter.timeZone = NSTimeZone(name: "UTC")
-        let timeStamp = dateFormatter.stringFromDate(dateData)
-        
-        return timeStamp
     }
 }

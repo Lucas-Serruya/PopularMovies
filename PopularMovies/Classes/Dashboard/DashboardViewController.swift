@@ -11,32 +11,27 @@ import UIKit
 class DashboardViewController: UIViewController {
     
     @IBOutlet weak var moviesCollectionView: UICollectionView!
+    
     var flowLayout = UICollectionViewFlowLayout()
     let movieCellAspectRatio: CGFloat = 1.7777777778 //9:16 aspect ratio
     let movieCellIdentifier = "MovieCollectionItemIdentifier"
-    let moviePortalSegue = "showMoviePortal"
     var movies: [Movie] = Array()
     var dataSource = DashboardDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupMoviesCollectionView()
+        
         title = "Movies"
         
-        dataSource.needMoreMovies { (movies) in
+        setupMoviesCollectionView()
+        
+        dataSource.getPopularMovies({ (movies) in
             self.movies = movies
             self.moviesCollectionView.reloadData()
-        }
+        }, errorHandler: nil)
         
         setStatusBarColor(ColorsPalette.statusBarColor)
         navigationController?.navigationBar.barTintColor = ColorsPalette.navBarBgColor
-    }
-    
-    func setStatusBarColor(color: UIColor) {
-        guard let statusBar = UIApplication.sharedApplication().valueForKey("statusBarWindow")?.valueForKey("statusBar") as? UIView else {
-            return
-        }
-        statusBar.backgroundColor = color
     }
     
     func setupMoviesCollectionView() {
@@ -75,7 +70,6 @@ class DashboardViewController: UIViewController {
 extension DashboardViewController: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movies.count
-        //must implement
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {

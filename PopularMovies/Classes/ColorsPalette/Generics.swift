@@ -19,3 +19,10 @@ func value<T>(iPad iPad:T, iPhone:T) -> T {
 struct NotificationKey {
     static let didSetThumbnailPoster  = "didSetThumbnailPoster"
 }
+
+func setStatusBarColor(color: UIColor) {
+    guard let statusBar = UIApplication.sharedApplication().valueForKey("statusBarWindow")?.valueForKey("statusBar") as? UIView else {
+        return
+    }
+    statusBar.backgroundColor = color
+}

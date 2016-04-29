@@ -10,7 +10,7 @@ target 'PopularMovies' do
 
     pod 'Alamofire', '~> 3.3'
     pod 'SDWebImage', '~>3.7'
-
+    pod 'ChameleonFramework/Swift'
 
 end
 

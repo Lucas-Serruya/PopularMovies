@@ -17,6 +17,7 @@ class DashboardViewController: UIViewController {
     let movieCellIdentifier = "MovieCollectionItemIdentifier"
     var movies: [Movie] = Array()
     var dataSource = DashboardDataSource()
+    var activityIndicator: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,16 +25,45 @@ class DashboardViewController: UIViewController {
         title = "Movies"
         
         setupMoviesCollectionView()
+        setLoadingView()
         
+        showLoading()
         dataSource.getPopularMovies({ (movies) in
             self.movies = movies
             self.moviesCollectionView.reloadData()
+            self.hideLoading()
         }, errorHandler: nil)
         
         setStatusBarColor(ColorsPalette.statusBarColor)
         navigationController?.navigationBar.barTintColor = ColorsPalette.navBarBgColor
     }
     
+    func setLoadingView() {
+        let window = UIApplication.sharedApplication().delegate?.window
+        activityIndicator = UIView(frame:UIScreen.mainScreen().bounds)
+        let activityWheel = UIActivityIndicatorView()
+        activityWheel.frame = activityIndicator.frame
+        activityWheel.startAnimating()
+        activityIndicator.addSubview(activityWheel)
+        activityIndicator.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.8)
+        if let window = window {
+            window!.addSubview(activityIndicator)
+        }
+        activityIndicator.alpha = 0
+    }
+
+    func showLoading() {
+        UIView.animateWithDuration(0.3) { () -> Void in
+            self.activityIndicator.alpha = 1
+        }
+    }
+    
+    func hideLoading() {
+        UIView.animateWithDuration(0.1) { () -> Void in
+            self.activityIndicator.alpha = 0
+        }
+    }
+
     func setupMoviesCollectionView() {
         setFlowLayout()
         moviesCollectionView?.dataSource = self

@@ -31,7 +31,7 @@ class MoviePortalViewController: UIViewController {
         
         posterThumbnail.image = movie?.posterThumbnail
         if let title = movie?.title, let shortTitle = title.componentsSeparatedByString(":").first {
-            titleLabel.text = shortTitle
+            titleLabel.text = title
         }
         dateLabel.text = movie?.releaseDate?.returnStringDateWithFormat(currentFormat: "yyyy-MM-dd", dateRequiredFormat: "MMMM yyyy")
         if let rating = movie.rating {

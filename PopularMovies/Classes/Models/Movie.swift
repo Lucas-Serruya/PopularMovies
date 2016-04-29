@@ -11,7 +11,8 @@ import UIKit
 class Movie {
     var id: Int!
     var title: String?
-    var moviePosterThumbnailPath: String?
+    var posterThumbnailPath: String?
+    var posterThumbnail: UIImage?
     var trailerThumbnailPath: String?
     var overView: String?
     var rating: Float?
@@ -23,7 +24,7 @@ class Movie {
         }
         self.id = id
         title = dictionary["original_title"] as? String
-        moviePosterThumbnailPath = dictionary["poster_path"] as? String
+        posterThumbnailPath = dictionary["poster_path"] as? String
         trailerThumbnailPath = dictionary["backdrop_path"] as? String
         overView = dictionary["overview"] as? String
         rating = dictionary["vote_average"] as? Float

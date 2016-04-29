@@ -13,6 +13,10 @@
 		235C1B7E1CD04CBF00A6CD31 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235C1B7D1CD04CBF00A6CD31 /* DataSource.swift */; };
 		235C1B801CD04CD400A6CD31 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235C1B7F1CD04CD400A6CD31 /* DashboardViewController.swift */; };
 		235C1B831CD04CF900A6CD31 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235C1B821CD04CF900A6CD31 /* Movie.swift */; };
+		235C1B851CD0739C00A6CD31 /* MoviePortalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235C1B841CD0739C00A6CD31 /* MoviePortalViewController.swift */; };
+		236D105E1CD2DFE60016C6B8 /* ColorsPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D105D1CD2DFE60016C6B8 /* ColorsPalette.swift */; };
+		236D55901CD2F8DB006434C5 /* Generics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D558F1CD2F8DB006434C5 /* Generics.swift */; };
+		236D55941CD3172C006434C5 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D55931CD3172C006434C5 /* StringExtension.swift */; };
 		23DDF5981CCC07A6000AA976 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DDF5971CCC07A6000AA976 /* AppDelegate.swift */; };
 		23DDF59D1CCC07A6000AA976 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23DDF59B1CCC07A6000AA976 /* Main.storyboard */; };
 		23DDF59F1CCC07A6000AA976 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23DDF59E1CCC07A6000AA976 /* Assets.xcassets */; };
@@ -46,6 +50,10 @@
 		235C1B7D1CD04CBF00A6CD31 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		235C1B7F1CD04CD400A6CD31 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardViewController.swift; path = Classes/Dashboard/DashboardViewController.swift; sourceTree = "<group>"; };
 		235C1B821CD04CF900A6CD31 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = Classes/Models/Movie.swift; sourceTree = "<group>"; };
+		235C1B841CD0739C00A6CD31 /* MoviePortalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoviePortalViewController.swift; path = Classes/Models/MoviePortal/MoviePortalViewController.swift; sourceTree = "<group>"; };
+		236D105D1CD2DFE60016C6B8 /* ColorsPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorsPalette.swift; path = Classes/ColorsPalette/ColorsPalette.swift; sourceTree = "<group>"; };
+		236D558F1CD2F8DB006434C5 /* Generics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Generics.swift; path = Classes/ColorsPalette/Generics.swift; sourceTree = "<group>"; };
+		236D55931CD3172C006434C5 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Classes/Extensions/StringExtension.swift; sourceTree = "<group>"; };
 		23DDF5941CCC07A6000AA976 /* PopularMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopularMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23DDF5971CCC07A6000AA976 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23DDF59C1CCC07A6000AA976 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -100,6 +108,9 @@
 		2319D2091CCDA9210049E511 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				236D55951CD31736006434C5 /* Extensions */,
+				236D105C1CD2DFC40016C6B8 /* Design */,
+				235C1B861CD073A300A6CD31 /* MoviePortal */,
 				235C1B811CD04CF000A6CD31 /* Models */,
 				235C1B761CD04C3F00A6CD31 /* Dashboard */,
 			);
@@ -122,6 +133,30 @@
 				235C1B821CD04CF900A6CD31 /* Movie.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		235C1B861CD073A300A6CD31 /* MoviePortal */ = {
+			isa = PBXGroup;
+			children = (
+				235C1B841CD0739C00A6CD31 /* MoviePortalViewController.swift */,
+			);
+			name = MoviePortal;
+			sourceTree = "<group>";
+		};
+		236D105C1CD2DFC40016C6B8 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				236D105D1CD2DFE60016C6B8 /* ColorsPalette.swift */,
+			);
+			name = Design;
+			sourceTree = "<group>";
+		};
+		236D55951CD31736006434C5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				236D55931CD3172C006434C5 /* StringExtension.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		23DDF58B1CCC07A6000AA976 = {
@@ -151,6 +186,7 @@
 			children = (
 				2319D2091CCDA9210049E511 /* Classes */,
 				23DDF5971CCC07A6000AA976 /* AppDelegate.swift */,
+				236D558F1CD2F8DB006434C5 /* Generics.swift */,
 				235C1B7D1CD04CBF00A6CD31 /* DataSource.swift */,
 				23DDF59B1CCC07A6000AA976 /* Main.storyboard */,
 				23DDF59E1CCC07A6000AA976 /* Assets.xcassets */,
@@ -465,8 +501,12 @@
 			files = (
 				235C1B7E1CD04CBF00A6CD31 /* DataSource.swift in Sources */,
 				235C1B801CD04CD400A6CD31 /* DashboardViewController.swift in Sources */,
+				236D55941CD3172C006434C5 /* StringExtension.swift in Sources */,
+				235C1B851CD0739C00A6CD31 /* MoviePortalViewController.swift in Sources */,
 				235C1B831CD04CF900A6CD31 /* Movie.swift in Sources */,
+				236D105E1CD2DFE60016C6B8 /* ColorsPalette.swift in Sources */,
 				23DDF5981CCC07A6000AA976 /* AppDelegate.swift in Sources */,
+				236D55901CD2F8DB006434C5 /* Generics.swift in Sources */,
 				2319D20D1CCDA9CC0049E511 /* MovieCollectionViewCell.swift in Sources */,
 				235C1B7C1CD04CAD00A6CD31 /* DashboardDataSource.swift in Sources */,
 			);
@@ -611,7 +651,7 @@
 			baseConfigurationReference = 93EDE717109FB2464A4D501C /* Pods-PopularMovies.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				INFOPLIST_FILE = PopularMovies/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -626,7 +666,7 @@
 			baseConfigurationReference = AD288A22E752DF510B127A59 /* Pods-PopularMovies.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				INFOPLIST_FILE = PopularMovies/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

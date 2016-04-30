@@ -10,7 +10,7 @@ Swift 2.0<br/>
 This project uses CocoaPods, if you do not know about cocoaPods please visit:
 https://cocoapods.org
 
-#Dependecies
+#Dependencies
 
 Alamofire 3.1.5<br/>
 SDWebImage 3.7<br/>

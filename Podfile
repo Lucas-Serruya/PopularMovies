@@ -8,7 +8,7 @@ target 'PopularMovies' do
     platform :ios, '8.0'
     use_frameworks!
 
-    pod 'Alamofire', '~> 3.3'
+    pod 'Alamofire', '~> 3.1.5'
     pod 'SDWebImage', '~>3.7'
     pod 'ChameleonFramework/Swift'
 

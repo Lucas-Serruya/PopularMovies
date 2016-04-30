@@ -16,9 +16,10 @@ class Movie {
     var trailerThumbnailPath: String?
     var overView: String?
     var rating: Float?
-    var releaseDate: String?
+    var releaseDate: NSDate?
     
     init(fromDictionary dictionary: AnyObject) {
+        let apiStringFormat = "yyyy-MM-dd"
         guard let id = dictionary["id"] as? Int else {
             return
         }
@@ -28,6 +29,8 @@ class Movie {
         trailerThumbnailPath = dictionary["backdrop_path"] as? String
         overView = dictionary["overview"] as? String
         rating = dictionary["vote_average"] as? Float
-        releaseDate = dictionary["release_date"] as? String
+        if let dateString = dictionary["release_date"] as? String {
+            releaseDate = NSDate.date(fromString: dateString, stringFormat: apiStringFormat)
+        }
     }
 }

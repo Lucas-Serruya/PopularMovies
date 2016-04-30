@@ -30,10 +30,10 @@ class MoviePortalViewController: UIViewController {
         title = "Movie Detail"
         
         posterThumbnail.image = movie?.posterThumbnail
-        if let title = movie?.title, let shortTitle = title.componentsSeparatedByString(":").first {
+        if let title = movie?.title {
             titleLabel.text = title
         }
-        dateLabel.text = movie?.releaseDate?.returnStringDateWithFormat(currentFormat: "yyyy-MM-dd", dateRequiredFormat: "MMMM yyyy")
+        dateLabel.text = movie?.releaseDate?.stringDate(format: "MMMM yyyy")
         if let rating = movie.rating {
             ratingLabel.text = "Average rating: " + String(format:"%.02f", rating)
         }
@@ -41,7 +41,7 @@ class MoviePortalViewController: UIViewController {
         loadMovieTrailer()
         
         if let posterPath = movie?.posterThumbnailPath {
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MoviePortalViewController.didSetThumbnailPoster), name: NotificationKey.didSetThumbnailPoster + posterPath, object: nil)
+            NSNotificationCenter.defaultCenter().addObserver(self,selector:  "didSetThumbnailPoster", name: NotificationKey.didSetThumbnailPoster + posterPath, object: nil)
         }
     }
     

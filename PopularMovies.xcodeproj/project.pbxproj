@@ -16,7 +16,7 @@
 		235C1B851CD0739C00A6CD31 /* MoviePortalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235C1B841CD0739C00A6CD31 /* MoviePortalViewController.swift */; };
 		236D105E1CD2DFE60016C6B8 /* ColorsPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D105D1CD2DFE60016C6B8 /* ColorsPalette.swift */; };
 		236D55901CD2F8DB006434C5 /* Generics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D558F1CD2F8DB006434C5 /* Generics.swift */; };
-		236D55941CD3172C006434C5 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D55931CD3172C006434C5 /* StringExtension.swift */; };
+		23A61C201CD4261B0041734F /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A61C1F1CD4261B0041734F /* NSDateExtension.swift */; };
 		23DDF5981CCC07A6000AA976 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DDF5971CCC07A6000AA976 /* AppDelegate.swift */; };
 		23DDF59D1CCC07A6000AA976 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23DDF59B1CCC07A6000AA976 /* Main.storyboard */; };
 		23DDF59F1CCC07A6000AA976 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23DDF59E1CCC07A6000AA976 /* Assets.xcassets */; };
@@ -53,7 +53,7 @@
 		235C1B841CD0739C00A6CD31 /* MoviePortalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoviePortalViewController.swift; path = Classes/Models/MoviePortal/MoviePortalViewController.swift; sourceTree = "<group>"; };
 		236D105D1CD2DFE60016C6B8 /* ColorsPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorsPalette.swift; path = Classes/ColorsPalette/ColorsPalette.swift; sourceTree = "<group>"; };
 		236D558F1CD2F8DB006434C5 /* Generics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Generics.swift; path = Classes/ColorsPalette/Generics.swift; sourceTree = "<group>"; };
-		236D55931CD3172C006434C5 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Classes/Extensions/StringExtension.swift; sourceTree = "<group>"; };
+		23A61C1F1CD4261B0041734F /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSDateExtension.swift; path = Classes/Extensions/NSDateExtension.swift; sourceTree = "<group>"; };
 		23DDF5941CCC07A6000AA976 /* PopularMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopularMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23DDF5971CCC07A6000AA976 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23DDF59C1CCC07A6000AA976 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 		236D55951CD31736006434C5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				236D55931CD3172C006434C5 /* StringExtension.swift */,
+				23A61C1F1CD4261B0041734F /* NSDateExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -501,12 +501,12 @@
 			files = (
 				235C1B7E1CD04CBF00A6CD31 /* DataSource.swift in Sources */,
 				235C1B801CD04CD400A6CD31 /* DashboardViewController.swift in Sources */,
-				236D55941CD3172C006434C5 /* StringExtension.swift in Sources */,
 				235C1B851CD0739C00A6CD31 /* MoviePortalViewController.swift in Sources */,
 				235C1B831CD04CF900A6CD31 /* Movie.swift in Sources */,
 				236D105E1CD2DFE60016C6B8 /* ColorsPalette.swift in Sources */,
 				23DDF5981CCC07A6000AA976 /* AppDelegate.swift in Sources */,
 				236D55901CD2F8DB006434C5 /* Generics.swift in Sources */,
+				23A61C201CD4261B0041734F /* NSDateExtension.swift in Sources */,
 				2319D20D1CCDA9CC0049E511 /* MovieCollectionViewCell.swift in Sources */,
 				235C1B7C1CD04CAD00A6CD31 /* DashboardDataSource.swift in Sources */,
 			);
